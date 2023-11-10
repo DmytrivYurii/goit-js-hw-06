@@ -7,11 +7,15 @@ const ingredients = [
   "Condiments",
 ];
 
-const ingredientsList = document.getElementById("ingredients");
 
-ingredients.forEach((ingredients) => {
+
+const ulIngredients = document.getElementById("ingredients");
+const fragment = document.createDocumentFragment();
+ingredients.forEach((ingredient) => {
   const li = document.createElement("li");
-  li.textContent = ingredients;
+  li.textContent = ingredient;
   li.classList.add("item");
-  ingredientsList.appendChild(li);
+  fragment.appendChild(li);
 });
+
+ulIngredients.appendChild(fragment);
